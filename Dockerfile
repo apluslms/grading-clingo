@@ -1,4 +1,4 @@
-FROM apluslms/grading-base:1.3
+FROM apluslms/grading-base:2.0
 
 ARG VERSION=5.2.2
 ARG FILE=clingo-$VERSION-linux-x86_64
