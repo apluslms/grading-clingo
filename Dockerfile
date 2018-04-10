@@ -1,5 +1,15 @@
 FROM apluslms/grading-base:2.0
 
+RUN apt-get update -qqy && DEBIAN_FRONTEND=noninteractive apt-get install -qqy --no-install-recommends \
+    -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
+  bc \
+  pdf2svg \
+  texlive-fonts-recommended \
+  texlive-games \
+  texlive-latex-base \
+  texlive-latex-extra \
+  texlive-pictures
+
 ARG VERSION=5.2.2
 ARG FILE=clingo-$VERSION-linux-x86_64
 
@@ -11,12 +21,3 @@ RUN cd /usr/local/bin/ \
         $FILE/gringo \
         $FILE/lpconvert \
         $FILE/reify
-
-RUN apt-get update -qqy && DEBIAN_FRONTEND=noninteractive apt-get install -qqy --no-install-recommends \
-  bc \
-  pdf2svg \
-  texlive-fonts-recommended \
-  texlive-games \
-  texlive-latex-base \
-  texlive-latex-extra \
-  texlive-pictures
