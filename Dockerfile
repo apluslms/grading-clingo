@@ -11,3 +11,12 @@ RUN cd /usr/local/bin/ \
         $FILE/gringo \
         $FILE/lpconvert \
         $FILE/reify
+
+RUN apt-get update -qqy && DEBIAN_FRONTEND=noninteractive apt-get install -qqy --no-install-recommends \
+  bc \
+  pdf2svg \
+  texlive-fonts-recommended \
+  texlive-games \
+  texlive-latex-base \
+  texlive-latex-extra \
+  texlive-pictures
