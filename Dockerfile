@@ -8,7 +8,8 @@ RUN apt-get update -qqy && DEBIAN_FRONTEND=noninteractive apt-get install -qqy -
   texlive-games \
   texlive-latex-base \
   texlive-latex-extra \
-  texlive-pictures
+  texlive-pictures \
+&& rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 ARG VERSION=5.2.2
 ARG FILE=clingo-$VERSION-linux-x86_64
