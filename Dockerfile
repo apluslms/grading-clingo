@@ -1,4 +1,4 @@
-FROM apluslms/grading-base:2.1
+FROM apluslms/grading-base:2.4
 
 RUN apt-get update -qqy && DEBIAN_FRONTEND=noninteractive apt-get install -qqy --no-install-recommends \
     -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
@@ -11,7 +11,7 @@ RUN apt-get update -qqy && DEBIAN_FRONTEND=noninteractive apt-get install -qqy -
   texlive-pictures \
 && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
-ARG VERSION=5.2.2
+ARG VERSION=5.3.0
 ARG FILE=clingo-$VERSION-linux-x86_64
 
 RUN cd /usr/local/bin/ \
