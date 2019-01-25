@@ -3,6 +3,7 @@ FROM apluslms/grading-base:2.7
 RUN apt-get update -qqy && DEBIAN_FRONTEND=noninteractive apt-get install -qqy --no-install-recommends \
     -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
   bc \
+  dot2tex \
   pdf2svg \
   texlive-fonts-recommended \
   texlive-games \
