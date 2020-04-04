@@ -30,6 +30,7 @@ RUN apt-get update -qqy && DEBIAN_FRONTEND=noninteractive apt-get install -qqy -
   file \
   flex \
   gcc \
+  libc6-dev \
   m4 \
   make \
 && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
