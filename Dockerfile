@@ -23,3 +23,14 @@ RUN cd /usr/local/bin/ \
         $FILE/gringo \
         $FILE/lpconvert \
         $FILE/reify
+
+RUN apt-get update -qqy && DEBIAN_FRONTEND=noninteractive apt-get install -qqy --no-install-recommends \
+    -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
+  bison \
+  file \
+  flex \
+  gcc \
+  m4 \
+  make \
+&& rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+
